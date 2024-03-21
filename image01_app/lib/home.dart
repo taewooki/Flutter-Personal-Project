@@ -11,8 +11,6 @@ class Home extends StatelessWidget {
         title: const Text('Image 01'),
 
       ),
-
-      
     body: Center(
       child: Column(
         children: [
