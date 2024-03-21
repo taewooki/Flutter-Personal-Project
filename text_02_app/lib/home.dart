@@ -8,40 +8,25 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Text with Colum and Row'),
+        backgroundColor: Colors.cyan,
+        foregroundColor: Colors.white,
       ),
-      body: const Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-            Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Icon(
-                Icons.email_rounded,
-                color: Colors.red,
+      backgroundColor: Colors.indigo,
+      body: Center(
+        child: Container(
+          color: Colors.yellow,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("유비"),
+              Text("관우"),
+              SizedBox(
+                height: 50,
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Icon(
-                Icons.account_circle,
-                color: Colors.blue,                
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Icon(
-                Icons.account_balance
-              
-              ),
-            ), 
-          ],
-        ), 
-        ),
-         ), 
-          ],
+              Text("장비"),
+              Text("제갈량"),
+            ],
+          ),
         ),
       ),
     );
