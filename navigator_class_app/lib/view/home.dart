@@ -15,12 +15,12 @@ class Home extends StatelessWidget {
         child: Column(
           children: [
             ElevatedButton(
-                onPressed: () => Navigator.pushNamed(context, '1st'),                
+                onPressed: () => Navigator.pushNamed(context, '/1st'),                
                 child: const Text('Go to the screen #1'),                              
                 ), 
 
             ElevatedButton(
-              onPressed: () => Navigator.pushNamed(context, '2nd'),
+              onPressed: () => Navigator.pushNamed(context, '/2nd'),
               child: const Text('Go to the screen #2',)),
           ],
         ),
