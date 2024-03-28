@@ -39,7 +39,7 @@ class Home extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () => Navigator.pushNamed(context, '/send'),
-              icon: const Icon(Icons.email),
+              // icon: const Icon(Icons.email),
               child: null,
             ),
             Text('보낸편지함'),

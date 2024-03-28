@@ -38,7 +38,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
       // ),
       body: TabBarView(
         controller: tController,
-        children: [
+        children: const [
           FirstPage(),
           SecondPage(),
         ]
@@ -62,7 +62,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             // VerticalDivider(
             //   color: Colors.black,
             // ),
-            Tab(
+            const Tab(
               icon: Icon(Icons.looks_two_outlined),
               text: 'Two',
             ),
