@@ -10,14 +10,15 @@ class Home extends StatelessWidget {
         title: const Text('Home'),
       ),
       body: Center(
-        child: Column( mainAxisAlignment: MainAxisAlignment.center,
-          children: [ 
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
             ElevatedButton(
-              onPressed: () => Navigator.pushNamed(context, '1st'),
-              child: const Text('Go to the screen 1st'),              
+              onPressed: () => Navigator.pushNamed(context, '/1st'),
+              child: const Text('Go to the screen 1st'),
             ),
             ElevatedButton(
-                onPressed: () => Navigator.pushNamed(context, '2nd'),
+                onPressed: () => Navigator.pushNamed(context, '/2nd'),
                 child: const Text('Go to the screen 2nd')),
           ],
         ),

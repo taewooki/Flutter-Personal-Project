@@ -8,11 +8,10 @@ class SecondPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('SecondPage'),
+        backgroundColor: Colors.green,
       ),
-      body: Column(
-        children: [
-          Text('test'),
-        ],
+      body: Center(
+        child: Text('Test'),
       ),
     );
   }

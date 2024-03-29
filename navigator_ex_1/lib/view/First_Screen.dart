@@ -8,36 +8,41 @@ class FirstScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         title: const Text('Screen 1st'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-        
-        children: [ 
-        ElevatedButton(
-          onPressed: () {
-            Navigator.push(context,MaterialPageRoute(builder: (context){
-              return const Home();
-            }));
-          },
-          child: const Text('Go to the Home page'),
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const Home();
+                }));
+              },
+              child: const Text('Go to the Home page'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const SecondImage();
+                }));
+              },
+              child: const Text('Go to the second Image'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const FirstScreen();
+                }));
+              },
+              child: const Text('Go to the first Screen'),
+            ),
+          ],
         ),
-        ElevatedButton(
-          onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return const SecondImage();
-            }));
-          },
-          child: const Text('Go to the second Image'),
-        ),
-        ],
       ),
-      ),
-
-
     );
   }
 }
