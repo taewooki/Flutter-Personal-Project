@@ -29,9 +29,6 @@ class _HomeState extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('현재 클릭수는 $count 입니다.'),
-            const SizedBox(
-              height: 10,
-            ),
             FloatingActionButton(
               onPressed: () {
                 count++;
@@ -46,9 +43,6 @@ class _HomeState extends State<Home> {
                   Icon(Icons.add),
                 ],
               ),
-            ),
-            const SizedBox(
-              height: 10,
             ),
             FloatingActionButton(
               onPressed: () {

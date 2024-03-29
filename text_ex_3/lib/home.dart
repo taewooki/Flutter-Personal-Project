@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -7,21 +8,21 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Text review'),
+        title: Text('Text review'),
         backgroundColor: Colors.orange,
         foregroundColor: Colors.white,
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('text'),
             SizedBox(
-              height: 10,
+              width: 10,
             ),
             Text('Text'),
             SizedBox(
-              height: 10,
+              width: 10,
             ),
             Text('test'),
           ],

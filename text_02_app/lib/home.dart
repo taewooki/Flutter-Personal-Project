@@ -15,7 +15,7 @@ class Home extends StatelessWidget {
       body: Center(
         child: Container(
           color: Colors.yellow,
-          child: const Column(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text("유비"),
