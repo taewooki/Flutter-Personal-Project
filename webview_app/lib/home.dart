@@ -9,32 +9,30 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
   late WebViewController controller;
   late bool isLoading; // 서버에서 데이터 가져올때까지 돌아가는 것
   late String siteName;
 
   @override
-  void initState() {    
+  void initState() {
     super.initState();
     isLoading = true;
-    siteName ="www.daum.net";
-    
+    siteName = "www.daum.net";
+
     controller = WebViewController() // controller 에 넣을께 많음. 그래서 .. 으로 사용
-    ..setJavaScriptMode(JavaScriptMode.unrestricted)
-    ..setNavigationDelegate(
-      NavigationDelegate(
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setNavigationDelegate(NavigationDelegate(
         onProgress: (progress) {
           isLoading = true;
-          setState(() {});          
+          setState(() {});
         },
-        onPageStarted:(url) {
+        onPageStarted: (url) {
           isLoading = true;
           setState(() {});
-        }, 
+        },
         onPageFinished: (url) {
           isLoading = false;
-          setState(() {});          
+          setState(() {});
         },
         onWebResourceError: (error) {
           isLoading = false;
@@ -44,56 +42,47 @@ class _HomeState extends State<Home> {
       ..loadRequest(Uri.parse("http://$siteName")); // 자바에서 쓰는 포맷
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Floating Button WebView'),
-        backgroundColor: Colors.yellow,
-        foregroundColor: Colors.black,       
+        title: const Text('WebView'),        
       ),
       body: Stack(
         children: [
           isLoading
-          ? const Center(
-            child: CircularProgressIndicator(),
-          )
-          : const Stack(), // 책 갈피 
+              ? const Center(
+                  child: CircularProgressIndicator(),
+                )
+              : const Stack(), // 책 갈피
           WebViewWidget(controller: controller),
         ],
       ),
-                  
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.red,
-          child: Icon(Icons.arrow_back),
-          onPressed:() => backProccess(),
-        ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.red,
+        child: Icon(Icons.arrow_back),
+        onPressed: () => backProccess(),
+      ),
     );
   }
 
   // fucntions
-  backProccess() async{
-    if(await controller.canGoBack()){
+  backProccess() async {
+    if (await controller.canGoBack()) {
       controller.goBack();
-
-    }else{
-    snackBarFunction();     
-    } 
+    } else {
+      snackBarFunction();
+    }
   }
-      snackBarFunction(){
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('No more to go'),
-            duration: Duration(seconds: 2),
-            backgroundColor:Colors.black 
-          )
-          );
-      }
 
-      reloadSite(){
-        controller.loadRequest((Uri.parse("https://$siteName")));
-      }
+  snackBarFunction() {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('No more to go'),
+        duration: Duration(seconds: 2),
+        backgroundColor: Colors.black));
+  }
 
-
+  reloadSite() {
+    controller.loadRequest((Uri.parse("https://$siteName")));
+  }
 } // end
