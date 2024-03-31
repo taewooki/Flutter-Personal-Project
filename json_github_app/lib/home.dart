@@ -11,7 +11,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
   late List data;
 
   @override
@@ -39,18 +38,17 @@ class _HomeState extends State<Home> {
       ),
       body: Center(
         child: data.isEmpty
-          ? const Text(
-            '데이터 불러오는중',
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-            ),
-            textAlign: TextAlign.center,
-          )
-          : ListView.builder(
-              itemCount: data.length,
-              itemBuilder: (context, index) => cardBuild(context, index)
-            ),
+            ? const Text(
+                '데이터 불러오는중',
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
+              )
+            : ListView.builder(
+                itemCount: data.length,
+                itemBuilder: (context, index) => cardBuild(context, index)),
       ),
     );
   }
@@ -64,65 +62,45 @@ class _HomeState extends State<Home> {
           SizedBox(
             width: 300,
             child: Card(
-              color: Colors.yellow,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(10, 0 ,0, 0),
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        const Text(
-                          'Code : ',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold
-                          ),
-                        ),
-                        Text(
-                          data[index]['code'].toString()
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        const Text(
-                          'Name : ',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold
-                          ),
-                        ),
-                        Text(
-                          data[index]['name'].toString()
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        const Text(
-                          'Dept : ',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold
-                          ),
-                        ),
-                        Text(
-                          data[index]['dept'].toString()
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        const Text(
-                          'Phone : ',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold
-                          ),
-                        ),
-                        Text(
-                          data[index]['phone'].toString()
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      const Text(
+                        'Code : ',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      Text(data[index]['code'].toString()),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      const Text(
+                        'Name : ',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      Text(data[index]['name'].toString()),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      const Text(
+                        'Dept : ',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      Text(data[index]['dept'].toString()),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      const Text(
+                        'Phone : ',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      Text(data[index]['phone'].toString()),
+                    ],
+                  ),
+                ],
               ),
             ),
           ),
@@ -130,5 +108,4 @@ class _HomeState extends State<Home> {
       ),
     );
   }
-
 } // End

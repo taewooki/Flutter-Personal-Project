@@ -3,7 +3,7 @@ import 'package:webview_flutter/webview_flutter.dart';
 
 class WebView extends StatefulWidget {
   final String siteName; //변수 설정.
-  
+
   //StatefulWidget 상속 받음. 웹 뷰 화면의 기본 구조와 기능을 정의.
   //siteName 과 같은 속성을 통해 초기 설정을 수행.
 
